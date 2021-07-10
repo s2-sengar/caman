@@ -363,8 +363,6 @@ body {
   .upload__text {
     margin-top: 2rem;
     font-size: 1.5rem;
-    display: block;
-    color: #09C372;
   }
   .upload--file {
     height: 26.4rem;
@@ -374,92 +372,10 @@ body {
     font-size: 1.5rem;
   }
   .btn--upload {
-    display: inline-block;
     padding: 8rem 12rem;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-  }
-  .btn--upload:hover {
-    background-color: #434B55;
-    -webkit-transform: translateY(-0.5rem);
-            transform: translateY(-0.5rem);
   }
   .btn--filters {
-    color: #09C372;
     padding: .5rem 3.5rem;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-  }
-  .btn--filters:hover {
-    background-color: #09C372;
-    color: #13181C;
-    -webkit-transform: translateY(-0.2rem);
-            transform: translateY(-0.2rem);
-  }
-  .btn--sub, .btn--add, .btn--disabled {
-    width: 5rem;
-    height: 5rem;
-    display: inline-block;
-    text-align: center;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-  }
-  .btn--disabled {
-    cursor: default;
-    width: 19rem;
-    height: 5rem;
-    margin: 1px;
-  }
-  .btn--sub {
-    color: #F22D48;
-  }
-  .btn--sub:hover {
-    color: #13181C;
-    background-color: #F22D48;
-  }
-  .btn--add {
-    color: #09C372;
-  }
-  .btn--add:hover {
-    color: #13181C;
-    background-color: #09C372;
-  }
-  .btn--download {
-    color: #13181C;
-    background-color: #EBDD50;
-    background-color: #09C372;
-    padding: 1rem 3.5rem;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-  }
-  .btn--download:hover {
-    -webkit-transform: translateY(-0.2rem);
-            transform: translateY(-0.2rem);
-    background-color: #00a55d;
-  }
-  .btn--clear {
-    color: #F22D48;
-    padding: .9rem 3.5rem;
-    background-color: #13181C;
-    border: 1.2px solid #F22D48;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-  }
-  .btn--clear:hover {
-    -webkit-transform: translateY(-0.2rem);
-            transform: translateY(-0.2rem);
-    background-color: #F22D48;
-    color: #13181C;
-  }
-  .btn--delete {
-    background-color: transparent;
-    height: 5rem;
-    width: 5rem;
-    text-align: center;
-    position: absolute;
-    opacity: 0;
-    -webkit-transition: all .5s;
-    transition: all .5s;
   }
   .fa-chevron-left,
   .fa-chevron-right {
@@ -495,6 +411,9 @@ body {
   .btn--upload {
     padding: 4rem 6rem;
   }
+  .upload__canvas {
+    border: 0.4rem dashed #2A2F35;
+  }
   .heading-secondary {
     font-size: 2rem;
     text-align: center;
@@ -517,6 +436,9 @@ body {
   .row {
     max-width: 30rem;
   }
+  .upload__canvas {
+    border: 0.2rem dashed #2A2F35;
+  }
   .upload--file {
     height: 20rem;
     width: 20.5rem;
@@ -536,8 +458,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .btn--download,
-  .btn--clear {
+  .btn--download, .btn--clear {
     display: block;
     margin: 0;
     width: 20rem;
