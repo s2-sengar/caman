@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+
+$color-primary-dark:#13181C;
+$color-primary-light:#2A2F35;
+$color-primary-light-2:#434B55;
+$color-secondary-white:#D7D7D7;
+$color-secondary-yellow:#EBDD50;
+$color-secondary-green:#09C372;
+$color-secondary-green-dark:#00a55d;
+$color-secondary-red:#F22D48;
+
+.mg-lf-3{
+    margin-left: 3rem;
+}
+.mg-lf-5{
+    margin-left: 5rem;
+}
+.mg-bt-2{
+    margin-bottom: 2rem;
+}
+.mg-bt-3{
+    margin-bottom: 3rem;
+}
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: $color-primary-dark;
+    color: $color-secondary-white;
+    font-size: 62.5%;
+    text-rendering: optimizeLegibility;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+.row{
+    max-width: 114rem;
+    margin: 0 auto;
+}
+.header{
+    position: relative;
+    height: 13rem;
+    &__nav{
+        padding: 3.5rem 2.5rem 2rem 2.5rem;
+        background-color: $color-primary-light;
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        left: 10rem;
+        z-index: 222;
+    }
+    &__logo{
+        &--top{
+            width: 7rem;
+            height: auto;
+        }
+    }
+}
+.upload{
+    margin-top: 8rem;
+    position: relative;
+    canvas{
+        width: 100%;
+        height: 48rem;
+        // background-color: #09C372;
+        border: .5rem dashed $color-primary-light;
+    }
+    &__logo{
+        width: 10rem;
+        height: auto;
+    }
+    &__text{
+        margin-top: 2rem;
+        display: block;
+        color: $color-secondary-green;
+    }
+    &--wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    &--file{
+        height: 28.4rem;
+        width: 55.8rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 222;
+        &:hover + .btn--upload{
+            background-color: $color-primary-light-2;
+            transform: translateY(-.5rem);
+        }
+    }
+}
+.btn{
+    text-decoration: none;
+    color: $color-secondary-white;
+    font-size: 2rem;
+    background-color: $color-primary-light;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    outline: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    &--upload{
+        display: inline-block;
+        padding: 8rem 18rem;
+        transition: all .3s;
+        &:hover{
+            background-color: $color-primary-light-2;
+            transform: translateY(-.5rem);
+        }
+    }
+    &--filters{
+        color: $color-secondary-green;
+        padding: 1.5rem 3.5rem;
+        transition: all .3s;
+        &:hover{
+            background-color: $color-secondary-green;
+            color: $color-primary-dark;
+            transform: translateY(-.2rem);
+        }
+    }
+    &--sub,
+    &--add,
+    &--disabled{
+        width: 5rem;
+        height: 5rem;
+        display: inline-block;
+        text-align: center;
+        // padding-top: 1rem;
+        transition: all .3s;
+    }
+    &--disabled{
+        cursor:default;
+        width: 19rem;
+        height: 5rem;
+        margin: 1px;
+        
+    }
+    &--sub{
+        color: $color-secondary-red;
+        &:hover{
+            color: $color-primary-dark;
+            background-color: $color-secondary-red;
+        }
+    }
+    &--add{
+        color: $color-secondary-green;
+        &:hover{
+            color: $color-primary-dark;
+            background-color: $color-secondary-green;
+        }   
+    }
+    &--download{
+        color: $color-primary-dark;
+        background-color: $color-secondary-yellow;
+        background-color: $color-secondary-green;
+        padding: 1rem 3.5rem;
+        transition: all .3s;
+        &:hover{
+            transform: translateY(-.2rem);
+            background-color: $color-secondary-green-dark;
+            // color: $color-primary-dark;
+        }
+    }
+    &--clear{
+        color: $color-secondary-red;
+        padding: .9rem 3.5rem;
+        background-color: $color-primary-dark;
+        border: 1.2px solid $color-secondary-red;
+        transition: all .3s;
+        &:hover{
+            transform: translateY(-.2rem);
+            background-color: $color-secondary-red;
+            color: $color-primary-dark;
+        }
+    }
+}
+.heading{
+    &-secondary{
+        font-size: 2.5rem;
+    }
+}
+.filters{
+    position: relative;
+    padding-top: 6rem;
+    &__logo{
+        height: 2.5rem;
+        margin-right: 1rem;
+    }
+    &__slider{
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+}
+.glider{
+    &-prev,
+    &-next{
+        top: 75%;
+        cursor: pointer;
+        z-index: 222;
+    }
+    &-prev{
+        left: -5rem;
+    }
+    &-next{
+        right: -5rem;
+    }
+}
+.basic-ctrl{
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    &--wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+}
+.download{
+    text-align: center;
+    padding-bottom: 20rem;
+}
