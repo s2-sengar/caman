@@ -1,3 +1,4 @@
+// 
 // -------------------------------
 // Carousal 
 new Glider(document.querySelector('.glider'), {
@@ -11,12 +12,22 @@ new Glider(document.querySelector('.glider'), {
 });
 // 
 //--------------------------------
+//Loader
+// 
+window.addEventListener('load',()=>{
+    const loader=document.querySelector('.pre-loader');
+    loader.style.display='none';
+}); 
+// 
+// ----------------------------------
 // 
 const canvas = document.querySelector('.upload__canvas');
 const uploadFile= document.querySelector('.upload--file');
 const downloadFile = document.querySelector('.btn--download');
 const clear = document.querySelector('.btn--clear');
 const uploadBtn=document.querySelector('.upload--wrapper');
+const deleteImg=document.querySelector('.btn--delete');
+
 const ctx = canvas.getContext('2d');
 
 let img=new Image();
@@ -47,6 +58,7 @@ uploadFile.addEventListener('change',()=>{
         // const width=img.width;
         
         img.onload=function(){
+            deleteImg.style.display='inline-block';
             canvas.width=img.width;
             canvas.height=img.height;
             ctx.drawImage(img,0,0,img.width,img.height);
@@ -210,6 +222,14 @@ downloadFile.addEventListener('click',(e)=>{
 
     downloadImg(canvas,newFileName);
 });
+
+// removeImageFromCanvas
+
+deleteImg.addEventListener('click',()=>{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    uploadBtn.style.display='block';
+    deleteImg.style.display='none';
+})
 
 function downloadImg(canvas,fileName){
     // initilizingEvent

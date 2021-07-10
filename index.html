@@ -10,13 +10,21 @@
     <title>Caman | Online Photo Editor</title>
 </head>
 <body>
+    <div class="pre-loader">
+        <img src="./css/img/caman_logo_green.svg" alt="Caman" class="pre-loader__img">
+        <h2 class="heading-secondary mg-lf-3">
+            Caman
+        </h2>
+    </div>
     <header class="row header">
         <nav class="header__nav">
-            <img src="./css/img/caman_logo_green.svg" alt="logo" class="header__logo--top">
+            <img src="./css/img/caman_logo_green.svg" alt="logo" class="header__logo--top mg-bt-s">
+            <h1 class="heading-primary">Caman.</h1>
         </nav>
     </header>
     <section class="row upload">
         <canvas class="upload__canvas" id="canvas"></canvas>
+        <button class="btn btn--delete"><img src="./css/img/delete-ico.svg" alt="delete" class="delete-btn"></button>
         <div class="upload--wrapper">
             <input type="file" class="upload--file">
             <a href="#" class="btn btn--upload">

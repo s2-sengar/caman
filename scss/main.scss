@@ -10,6 +10,9 @@ $color-secondary-green:#09C372;
 $color-secondary-green-dark:#00a55d;
 $color-secondary-red:#F22D48;
 
+.mg-bt-s{
+    margin-bottom: .8rem;
+}
 .mg-lf-3{
     margin-left: 3rem;
 }
@@ -22,6 +25,11 @@ $color-secondary-red:#F22D48;
 .mg-bt-3{
     margin-bottom: 3rem;
 }
+.mg-rt-5{
+    margin-right: 5rem;
+}
+
+
 *,
 *::after,
 *::before{
@@ -43,11 +51,43 @@ body{
     max-width: 114rem;
     margin: 0 auto;
 }
+
+// preloader
+.pre-loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary-dark;
+    z-index: 2222222;
+    color:$color-secondary-green;
+    &__img{
+        animation:spin .5s infinite;
+        animation-timing-function:linear;
+    }
+    
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
 .header{
     position: relative;
     height: 13rem;
     &__nav{
-        padding: 3.5rem 2.5rem 2rem 2.5rem;
+        text-align: center;
+        padding: 3.5rem 2.5rem 1rem 2.5rem;
         background-color: $color-primary-light;
         display: inline-block;
         position: fixed;
@@ -59,6 +99,8 @@ body{
         &--top{
             width: 7rem;
             height: auto;
+            animation:spin 6s infinite;
+            animation-timing-function:linear;
         }
     }
 }
@@ -185,6 +227,14 @@ body{
             background-color: $color-secondary-red;
             color: $color-primary-dark;
         }
+    }
+    &--delete{
+        background-color: transparent;
+        height: 5rem;
+        width: 5rem;
+        text-align: center;
+        position: absolute;
+        display: none;
     }
 }
 .heading{
