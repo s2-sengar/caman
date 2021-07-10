@@ -271,8 +271,9 @@ downloadFile.addEventListener('click',(e)=>{
     if(fileExt==='.jpg' || fileExt==='.png'){
         newFileName=fileName.substring(0,fileName.length-4)+'-caman-s2s'+fileExt;
     }
-
-    downloadImg(canvas,newFileName);
+    if(fileName){
+        downloadImg(canvas,newFileName);
+    }
 });
 
 // removeImageFromCanvas
