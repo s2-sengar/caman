@@ -8,7 +8,59 @@ new Glider(document.querySelector('.glider'), {
     arrows: {
       prev: '.glider-prev',
       next: '.glider-next'
-    }
+    },
+    responsive:[
+        {
+            breakpoint:410,
+            settings:{
+                slidesToShow:1.2,
+                slidesToScroll:1
+            }
+        },
+        {
+            breakpoint:500,
+            settings:{
+                slidesToShow:2,
+                slidesToScroll:1
+            }
+        },
+        {
+            breakpoint:640,
+            settings:{
+                slidesToShow:2.5,
+                slidesToScroll:1
+            }
+        },
+        {
+            breakpoint:700,
+            settings:{
+                slidesToShow:3,
+                slidesToScroll:1.5
+            }
+        },
+        {
+            breakpoint:800,
+            settings:{
+                slidesToShow:3.7,
+                slidesToScroll:1.5
+            }
+        },
+        {
+            breakpoint:910,
+            settings:{
+                slidesToShow:4,
+                slidesToScroll:1.5
+            }
+        },
+        {
+            breakpoint:920,
+            settings:{
+                slidesToShow:4.5,
+                slidesToScroll:1.5
+            }
+        }
+        
+    ]
 });
 // 
 //--------------------------------
@@ -49,7 +101,7 @@ uploadFile.addEventListener('change',()=>{
     // addImageToCanvas
     reader.addEventListener('load',()=>{
         const uploadBtn=document.querySelector('.upload--wrapper');
-        uploadBtn.style.display="none";
+        uploadBtn.style.display='none';
         img=new Image();
         // setImageSrc
         img.src=reader.result;
@@ -58,7 +110,7 @@ uploadFile.addEventListener('change',()=>{
         // const width=img.width;
         
         img.onload=function(){
-            deleteImg.style.display='inline-block';
+            deleteImg.style.opacity='1';
             canvas.width=img.width;
             canvas.height=img.height;
             ctx.drawImage(img,0,0,img.width,img.height);
@@ -228,7 +280,7 @@ downloadFile.addEventListener('click',(e)=>{
 deleteImg.addEventListener('click',()=>{
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     uploadBtn.style.display='block';
-    deleteImg.style.display='none';
+    deleteImg.style.opacity='0';
 })
 
 function downloadImg(canvas,fileName){
