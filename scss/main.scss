@@ -9,6 +9,7 @@ $color-secondary-yellow:#EBDD50;
 $color-secondary-green:#09C372;
 $color-secondary-green-dark:#00a55d;
 $color-secondary-red:#F22D48;
+$color-primary-footer:#1D2024;
 
 .mg-bt-s{
     margin-bottom: .8rem;
@@ -278,7 +279,7 @@ body{
 }
 .basic-ctrl{
     padding-top: 4rem;
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
     &--wrapper{
         display: flex;
         flex-wrap: wrap;
@@ -288,7 +289,102 @@ body{
 }
 .download{
     text-align: center;
-    padding-bottom: 20rem;
+    padding-bottom: 4rem;
+}
+
+
+
+.clear-fix::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.how-it-works{
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    &--heading{
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        letter-spacing: 2.5px;
+        text-align: center;
+        position: relative;
+        height: 7rem;
+        margin-bottom: 6rem;
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 6rem;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 10rem;
+            background-color: $color-secondary-green;
+        }
+    }
+    &__img-section{
+        max-width: 50%;
+        height: 30rem;
+        float: left;
+        
+    }
+    &--img{
+        height: 100%;
+        width: auto;
+    }
+    &__write-up{
+        width: 50%;
+        float: right;
+    }
+    &--steps{
+        font-size: 2rem;
+        font-weight: 300;
+        &:not(:last-child){
+            margin-bottom: 4rem;
+        }
+        div{
+            color: $color-secondary-green;
+            font-weight: 600;
+            height: 4rem;
+            width: 4rem;
+            text-align: center;
+            // display: inline-block;
+            margin-right: 4rem;
+            position: relative;
+            border-radius: 50%;
+            padding-top: .3rem;
+            border: 2px solid $color-secondary-green;
+            float: left;
+        }
+
+    }
+}
+.footer{
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-color: $color-primary-footer;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &--logo{
+        height: 6rem;
+        width: auto;
+        margin-right: 2rem;
+    }
+    &__git{
+        :not(:last-child){
+            margin-right: 4rem;
+        }
+    }
+    &__logo{
+        display: flex;
+        align-items: center;
+    }
+    &__img--git{
+        height: 4rem;
+    }
 }
 
 // responsiveness
@@ -341,6 +437,15 @@ body{
     .upload__canvas{
         height: 50rem;
     }
+    .how-it-works{
+        &__img-section{
+            display: none;   
+        }
+        &__write-up{
+            width: 100%;
+            float: unset;
+        }
+    }
 }
 @media only screen and (max-width:910px){
     .row{
@@ -373,10 +478,29 @@ body{
     .row{
         max-width: 55rem;
     }
+    .how-it-works{
+        font-size: 1rem;
+        &--heading{
+            font-size: 2rem;
+        }
+    }
 }
 @media only screen and (max-width:640px){
     .row{
         max-width: 40rem;
+    }
+    .delete-btn{
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+    .footer{
+        &__logo{
+            display: none;
+        }
+        &__wrapper{
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
 
@@ -393,6 +517,7 @@ body{
             width: 20.5rem;
         }
     }
+    
     .download{
         display: flex;
         flex-direction: column;
@@ -413,6 +538,10 @@ body{
             padding-top: 1.5rem;
             padding-bottom: 1.5rem;
         }
+    }
+    .delete-btn{
+        height: 3rem;
+        width: 3rem;
     }
     .header{
         height: 10rem;
@@ -437,6 +566,35 @@ body{
         }
         .btn{
             font-size: 1rem;
+        }
+    }
+    .how-it-works{
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        &--heading{
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 4rem;
+            &::after{
+                top: 5rem;
+                transform: translateX(-50%);
+                height: 2px;
+                width: 10rem;
+                background-color: $color-secondary-green;
+            }
+        }
+        &--steps{
+            font-size: 1.5rem;
+            div{
+                height: 3rem;
+                width: 3rem;
+                text-align: center;
+                margin-right: 2rem;
+                padding-top: .1rem;
+                border: 1.5px solid $color-secondary-green;
+                float: left;
+            }
+
         }
     }
 }
